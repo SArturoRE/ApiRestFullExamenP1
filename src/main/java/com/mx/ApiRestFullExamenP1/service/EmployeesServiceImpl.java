@@ -47,7 +47,6 @@ public class EmployeesServiceImpl {
 		boolean sexAs = false;
 		boolean pueAs = false;
 		boolean app = false;
-		boolean medad = false;
 		String respuesta="";
 		
 		for(Genders g: gendersRep.findAll()) {
