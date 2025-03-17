@@ -32,7 +32,15 @@ public class EmployeesWS {
 	//http://localhost:9000/Examen/ws/empleados/pruebaFecha
 	@GetMapping(path="/pruebaFecha")
 	public ResponseEntity<String> ProbandoLaEdad(@RequestBody Employees em){
-		Period edad = employeesServImpl.CalcularEdad(em);
-		return new ResponseEntity<String>("Edad: "+edad.getYears(),HttpStatus.OK);
+		//Period edad = employeesServImpl.CalcularEdad(em);
+		return new ResponseEntity<String>("Edad: ",HttpStatus.OK);
+	}
+	
+	//http://localhost:9000/Examen/ws/empleados/registrarEmpleado
+	@GetMapping("/registrarEmpleado")
+	public ResponseEntity<String> RegistrandoEmpleado(@RequestBody Employees em){
+		String seEncontro = employeesServImpl.RegistrarEmpleado(em);
+		
+		return new ResponseEntity<String>(seEncontro,HttpStatus.OK);
 	}
 }
